@@ -1,5 +1,4 @@
 == README
 
 Hello, Friends :3
-
-<tt>rake doc:app</tt>.
+ 
