@@ -1,18 +1,22 @@
 <h1>Recent Posts</h1>
 
 <%= link_to 'New Post', new_post_path %>
+
 <table>
   <tbody>
     <% @posts.each do |post| %>
       <% @author = User.find(post.user_id)  %>
       <tr>
-        <td><%= @author.name || @author.email %></td>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.title %> by <%= @author.name || @author.email %></td>
       </tr>
+      <tr><td><%= post.content %></td></tr>
+      <tr>
+        <td><span><%= link_to 'Continue Reading', post %></span>
+        <% if current_user.id == @author.id %>
+        <span><%= link_to 'Edit', edit_post_path(post) %></span>
+        <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+        <% end %>
+    </td></tr>
     <% end %>
   </tbody>
 </table>
