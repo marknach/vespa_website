@@ -1,25 +1,39 @@
-<h1>Recent Posts</h1>
-
-<%= link_to 'New Post', new_post_path %>
-
-<table>
+<%- model_class = Post -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:title) %></th>
+      <th><%= model_class.human_attribute_name(:author) %></th>
+      <th><%= model_class.human_attribute_name(:content) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
   <tbody>
     <% @posts.each do |post| %>
-      <% @author = User.find(post.user_id)  %>
+      <% @author = User.find(post.user_id) %>
       <tr>
-        <td><%= post.title %> by <%= @author.name || @author.email %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= @author.name || @author.email  %></td>
+        <td><%= post.content %></td>
+        <td><%=l post.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_post_path(post), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      post_path(post),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
-      <tr><td><%= post.content %></td></tr>
-      <tr>
-        <td><span><%= link_to 'Continue Reading', post %></span>
-        <% if current_user.id == @author.id %>
-        <span><%= link_to 'Edit', edit_post_path(post) %></span>
-        <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-        <% end %>
-    </td></tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_post_path,
+            :class => 'btn btn-primary' %>
