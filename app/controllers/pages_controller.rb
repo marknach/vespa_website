@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @posts = Post.all
+    @recent_posts = Post.order(created_at: :desc).take(3) 
   end
 end
