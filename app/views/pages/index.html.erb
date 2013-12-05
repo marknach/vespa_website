@@ -11,7 +11,7 @@
       <h2>Recent Posts</h2>
       <% @recent_posts = Post.order(created_at: :desc).take(3) %>
       <% @recent_posts.each do |post|%>
-        <h4> <%= post.title %> </h4>
+        <h4> <%= link_to post.title, post_path(post) %> </h4>
         <i> by <%= User.find(post.user_id).email %> </i>
         <p> <%= post.content %> </p>
       <% end %>
