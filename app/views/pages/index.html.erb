@@ -10,8 +10,10 @@
     <div class="span4">
       <h2>Recent Posts</h2>
       <% @recent_posts.each do |post|%>
-        <h4> <%= link_to post.title, post_path(post) %> </h4>
-        <i> by <%= User.find(post.user_id).email %> </i>
+        <p>
+          <strong> <%= link_to post.title, post_path(post) %> </strong>
+          by <i><%= User.find(post.user_id).email %> </i>
+        </p>
         <p> <%= post.content %> </p>
       <% end %>
     </div>
