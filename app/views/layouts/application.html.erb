@@ -42,6 +42,7 @@
                     <%= f.text_field :email, class: "span2", placeholder: "Email" %>
                     <%= f.password_field:password, class: "span2", placeholder: "Password" %>
                     <%= f.submit 'Sign In', class: "btn"  %>
+                    <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
                   <% end %>
               <% end %>
             </div>
