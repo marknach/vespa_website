@@ -1,4 +1,6 @@
 Vespa::Application.routes.draw do
+  resources :events
+
   get "pages/index"
   devise_for :users
   resources :posts
