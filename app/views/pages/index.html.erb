@@ -32,7 +32,7 @@
           <strong> <%= link_to event.title, event_path(event) %></strong>
           <i><%= event.date.to_formatted_s(:long_ordinal)  %></i>
         </p>
-        <p><%= event.info %></p>
+        <p><%= truncate(event.info, length: 200) %></p>
         <hr>
       <% end %>
     </div>
