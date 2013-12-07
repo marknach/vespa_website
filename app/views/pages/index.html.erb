@@ -26,12 +26,14 @@
     </div>
     <div class="span4">
       <h2>Upcoming Events</h2>
+      <hr>
       <% @upcoming_events.each do |event|%>
         <p> 
           <strong> <%= link_to event.title, event_path(event) %></strong>
-          <i><%= event.date  %></i>
+          <i><%= event.date.to_formatted_s(:long_ordinal)  %></i>
         </p>
         <p><%= event.info %></p>
+        <hr>
       <% end %>
     </div>
         
