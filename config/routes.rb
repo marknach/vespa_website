@@ -4,6 +4,7 @@ Vespa::Application.routes.draw do
   get "pages/index"
   devise_for :users
   resources :posts
+  get 'streams'  => 'streams#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
