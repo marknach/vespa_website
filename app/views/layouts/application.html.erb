@@ -21,9 +21,9 @@
                     <li><%= link_to "Posts", posts_path %></li>
                     <li><%= link_to "Events", events_path %></li>
                 </ul>
+                <ul class="nav pull-right">
                 <% if signed_in? %>
-                    <div class="navbar-div pull-right">
-                      <p class="navbar-text span2"><%=  current_user.email %></p>
+                      <li><%= link_to  current_user.email, edit_user_registration_path %></li>
                       <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn" %>
                 <% else %>
                   <%= form_for("user", :url => user_session_path, :html => { class: "navbar-form pull-right" }) do |f| %>
@@ -33,7 +33,7 @@
                     <%= link_to "Sign up", new_user_registration_path, class: "btn" %>
                   <% end %>
               <% end %>
-            </div>
+            </ul>
             <!--/.nav-collapse -->
         </div>
     </div>
