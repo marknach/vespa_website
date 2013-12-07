@@ -2,40 +2,25 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th><%= model_class.human_attribute_name(:title) %></th>
-      <th><%= model_class.human_attribute_name(:host) %></th>
-      <th><%= model_class.human_attribute_name(:location) %></th>
-      <th><%= model_class.human_attribute_name(:date) %></th>
-      <th><%= model_class.human_attribute_name(:info) %></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= link_to event.title, event_path(event) %></td>
-        <td><%= event.host %></td>
-        <td><%= event.location %></td>
-        <td><%= event.date.to_formatted_s(:long_ordinal) %></td>
-        <td><%= event.info %></td>
-        <% if current_user.is_admin? %>
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_event_path(event), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      event_path(event),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_event_path,
             :class => 'btn btn-primary' %>
+            
+<div id="events">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @events_by_date[date] %>
+      <ul>
+        <% @events_by_date[date].each do |event| %>
+          <li><%= link_to event.title, event %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>
+</div>
