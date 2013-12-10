@@ -2,13 +2,13 @@
 <div class="jumbotron">
   <div class="container">
     <div class= "row"> <p>
-          <div class= "span4">
+          <div class= "col-md-4">
             <h1 class="text-center">VeSPA</h1>
             <h3 class="text-center">Virgina eSports Association</h3>
             <p class="text-center">We are Virginia's Premiere Organization devoted to bringing eSports to friendly and competitive environments throughout Virginia.</p>
           </div>
-          <div class="span6">
-            <%= image_tag("vespa-banner.png", class: 'img-rounded center-block') %>
+          <div class="col-md-8">
+            <%= image_tag("vespa-banner.png", class: 'img-rounded text-center') %>
           </div> 
         </div> <p>
   </div>
@@ -16,7 +16,7 @@
 <hr>
 <div class="container"> 
   <div class="row fill-height">
-    <div class="span4">
+    <div class="col-md-4">
       <h2>Recent Posts</h2>
       <hr>
       <% @recent_posts.each do |post|%>
@@ -30,11 +30,11 @@
       <p class="text-center"><%= link_to "View All",  posts_path %></p> 
       <hr>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
       <h2>Videos</h2>
       <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
     </div>
-    <div class="span4">
+    <div class="col-md-4">
       <h2>Upcoming Events</h2>
       <hr>
       <% @upcoming_events.each do |event|%>
