@@ -1,4 +1,3 @@
 == README
 
-Hello, Friends :3
- 
+Website developed for purpose of learning and practicing ruby on rails.  Working on a redesign of the current Virginia eSports website found @ www.vespa.org.vt.edu
