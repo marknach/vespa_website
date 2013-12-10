@@ -16,9 +16,9 @@
 <% if current_user.is_admin? %>
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              events_path, :class => 'btn'  %>
+              events_path, :class => 'btn btn-default'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_event_path(@event), :class => 'btn' %>
+              edit_event_path(@event), :class => 'btn btn-default' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               event_path(@event),
               :method => 'delete',

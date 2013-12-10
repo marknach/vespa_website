@@ -7,10 +7,10 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              posts_path, :class => 'btn'  %>
+              posts_path, :class => 'btn btn-default'  %>
   <% if @author.id == current_user.try(:id) %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_post_path(@post), :class => 'btn' %>
+              edit_post_path(@post), :class => 'btn btn-default' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               post_path(@post),
               :method => 'delete',

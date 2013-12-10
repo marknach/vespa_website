@@ -5,6 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   def is_admin?
-    return false 
+    return self.email == "admin@vt.edu" 
   end
 end
