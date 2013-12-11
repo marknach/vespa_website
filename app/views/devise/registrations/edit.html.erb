@@ -1,27 +1,28 @@
-<div class="container">
-<h2>Edit Profile</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<div class="container" >
+  <h2 class="text-center">Edit Profile</h2>
+  <hr>
+  <div class="container col-md-4">
+  </div>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: "col-md-8" }) do |f| %>
   <%= devise_error_messages! %>
 
   <dl class="dl-horizontal">
     <dt><strong>Email</strong></dt>
-    <dd><%= f.email_field :email, :autofocus => true %></dd>
+    <dd><%= f.email_field :email, :autofocus => true, class: "form-control" %></dd>
     <dt><strong>Password</strong></dt>
-    <dd><%= f.password_field :password, :autocomplete => "off" %></dd>
+    <dd><%= f.password_field :password, :autocomplete => "off", class: "form-control" %></dd>
     <dt><strong>Confirm New Password</strong></dt>
-    <dd><%= f.password_field :password_confirmation %></dd>
+    <dd><%= f.password_field :password_confirmation, class: "form-control" %></dd>
     <dt><strong>Current Password</strong><dt>
-    <dd><%= f.password_field :current_password %></dd>
+    <dd><%= f.password_field :current_password, class: "form-control" %></dd>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
 
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
  </dl>
-<div>
-  <%= link_to "Cancel", :back, class: "btn" %>
-  <%= f.submit "Update", class: "btn" %>
+<div class="text-center">
+  <%= f.submit "Save Changes", class: "btn btn-default" %>
 </div>
 <% end %>
 
