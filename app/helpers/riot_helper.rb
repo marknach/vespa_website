@@ -22,7 +22,10 @@ module RiotHelper
     
   end
   
-  def
+  def get_league_info(summoner_id)
+    url = LEAGUE_URL % [summoner_id]
+    puts url
+  end
   
   def get_summoner_by_name(name)
     url = SUMMONER_BY_NAME_URL % [name]
