@@ -10,8 +10,15 @@ class User < ActiveRecord::Base
   def is_admin?
     return self.email == "admin@vt.edu" 
   end
-#  private
-#  def update_summoner_info(summoner_id)
-#    puts "updating #{summoner_id}
-#  end
+
+  private
+
+  def add_summoner(summoner_name) 
+    summoner = Summoner.find_by(name: summoner_name)
+    summoner = self.summoners..create(find_summoner_by_name(summoner_name)) unless summoner
+  end
+
+  def update_summoner_info(summoner_id)
+    puts "updating #{summoner_id}"
+  end
 end

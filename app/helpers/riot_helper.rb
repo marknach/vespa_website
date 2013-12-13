@@ -18,20 +18,15 @@ module RiotHelper
   SUMMONER_NAMES_BY_ID_URL = "/api/lol/#{REGION}/v1.1/summoner/%s/name"
   TEAM_URL = "/api/#{REGION}/v2.1/team/by-summoner/%s"
   
-  class Summoner 
-    
-  end
-  
   def get_league_info(summoner_id)
     url = LEAGUE_URL % [summoner_id]
     puts url
   end
   
   def get_summoner_by_name(name)
-    url =BASE_URL % [SUMMONER_BY_NAME_URL % [name]]
+    url = BASE_URL % [SUMMONER_BY_NAME_URL % [name]]
     puts url
-    resp = Net::HTTP.get(URI.parse(url))
-    puts resp.inspect
+    Net::HTTP.get(URI.parse(url))
   end 
 
 end
