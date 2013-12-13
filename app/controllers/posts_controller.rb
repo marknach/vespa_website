@@ -71,4 +71,9 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:user_id, :title, :content)
     end
+
+    def is_admin?
+      flash[:warning] = "Insufficient Privledges"
+      redirect_to(root_url) unless current_user.try(:is_admin?)
+    end
 end
