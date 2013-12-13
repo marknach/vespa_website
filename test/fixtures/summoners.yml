@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  profileIconId: 1
+  revisionDate: 
+  revisionDateStr: 2013-12-12
+  summonerLevel: 
+
+two:
+  name: MyString
+  profileIconId: 1
+  revisionDate: 
+  revisionDateStr: 2013-12-12
+  summonerLevel: 
