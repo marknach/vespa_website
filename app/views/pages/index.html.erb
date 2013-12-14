@@ -22,7 +22,7 @@
       <% @recent_posts.each do |post|%>
         <p>
           <strong> <%= link_to post.title, post_path(post) %> </strong>
-          by <i><%= User.find(post.user_id).email %> </i>
+          by <i><%= post.user %> </i>
         </p>
         <p> <%= simple_format post.preview %> </p>
         <hr>
