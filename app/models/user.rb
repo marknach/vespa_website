@@ -11,6 +11,9 @@ class User < ActiveRecord::Base
     return self.email == "admin@vt.edu" 
   end
 
+  def to_s
+    self.name.presence || self.email
+  end
   private
 
   def add_summoner(summoner_name) 

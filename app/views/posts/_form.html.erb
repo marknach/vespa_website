@@ -1,20 +1,14 @@
-<%= form_for @post, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field col-md-8' %>
-    </div>
+<%= form_for @post, :html => { :class => 'form-horizontal', :role => 'form' } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, :for => 'post_title' %>
+    <%= f.text_field :title, :class => 'form-control col-md-8' %>
   </div>
-  <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :content, :class => 'text_field col-md-8', rows: 10 %>
-    </div>
+  <div class="form-group">
+    <%= f.label :content, :for  => 'post_content' %>
+    <%= f.text_area :content, :class => 'form-control col-md-8', rows: 10 %>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
+   <button type="submit" class="btn btn-primary">Submit</button>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                posts_path, :class => 'btn' %>
-  </div>
+                posts_path, :class => 'btn btn-danger' %>
 <% end %>
