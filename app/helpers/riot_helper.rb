@@ -49,7 +49,7 @@ module RiotHelper
   end 
 
   def get_summoner_by_id(summoner_id)
-    JSON.parse(get_url( SUMMONER_BY_ID_URL % [summoner_i]]))
+    JSON.parse(get_url( SUMMONER_BY_ID_URL % [summoner_i]))
   end 
 
   def get_summoner_names_by_id(summoner_id)
