@@ -24,7 +24,7 @@
           <strong> <%= link_to post.title, post_path(post) %> </strong>
           by <i><%= post.user %> </i>
         </p>
-        <p> <%= simple_format post.preview %> </p>
+        <p> <%= simple_format post.preview %> </p> <%= link_to "(read more)", post_path(post) %> 
         <hr>
       <% end %>
       <p class="text-center"><%= link_to "View All",  posts_path %></p> 
