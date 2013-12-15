@@ -37,6 +37,9 @@
     <div class="col-md-4">
       <h2>Upcoming Events</h2>
       <hr>
+      <% if @upcoming_events.empty? %>
+        <p>No events this week: Check our our calendar for a full schedule</p>
+      <% end %>
       <% @upcoming_events.each do |event|%>
         <p> 
           <strong> <%= link_to event.title, event_path(event) %></strong>
