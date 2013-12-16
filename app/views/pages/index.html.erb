@@ -1,56 +1,66 @@
 <hr>
 <div class="jumbotron">
   <div class="container">
-    <div class= "row"> <p>
-          <div class= "col-md-4">
-            <h1 class="text-center">VeSPA</h1>
-            <h3 class="text-center">Virgina eSports Association</h3>
-            <p class="text-center">We are Virginia's Premiere Organization devoted to bringing eSports to friendly and competitive environments throughout Virginia.</p>
-          </div>
-          <div class="col-md-8">
-            <%= image_tag("vespa-banner.png", class: 'img-responsive text-center') %>
-          </div> 
-        </div> <p>
+    <div class="row"><p>
+
+      <div class="col-md-4">
+        <h1 class="text-center">VeSPA</h1>
+
+        <h3 class="text-center">Virgina eSports Association</h3>
+
+        <p class="text-center">We are Virginia's Premiere Organization devoted to bringing eSports to friendly and
+          competitive environments throughout Virginia.</p>
+      </div>
+      <div class="col-md-8">
+        <%= image_tag("vespa-banner.png", class: 'img-responsive text-center') %>
+      </div>
+    </div>
+    <p>
   </div>
 </div>
 <hr>
-<div class="container"> 
+<div class="container">
   <div class="row fill-height">
     <div class="col-md-4">
       <h2>Recent Posts</h2>
       <hr>
-      <% @recent_posts.each do |post|%>
-        <p>
-          <strong> <%= link_to post.title, post_path(post) %> </strong>
-          by <i><%= post.user %> </i>
-        </p>
-        <p> <%= simple_format post.preview %> </p> <%= link_to "(read more)", post_path(post) %> 
-        <hr>
+      <% @recent_posts.each do |post| %>
+          <p>
+            <strong> <%= link_to post.title, post_path(post) %> </strong>
+            by <i><%= post.user %> </i>
+          </p>
+
+          <p> <%= simple_format post.preview %> </p> <%= link_to "(read more)", post_path(post) %>
+          <hr>
       <% end %>
-      <p class="text-center"><%= link_to "View All",  posts_path %></p> 
+      <p class="text-center"><%= link_to "View All", posts_path %></p>
       <hr>
     </div>
     <div class="col-md-4">
       <h2>Videos</h2>
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+        condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec
+        sed odio dui. </p>
     </div>
     <div class="col-md-4">
       <h2>Upcoming Events</h2>
       <hr>
       <% if @upcoming_events.empty? %>
-        <p>No events this week: Check our our calendar for a full schedule</p>
+          <p>No events this week: Check our our calendar for a full schedule</p>
       <% end %>
-      <% @upcoming_events.each do |event|%>
-        <p> 
-          <strong> <%= link_to event.title, event_path(event) %></strong>
-          <i><%= event.date.to_formatted_s(:long_ordinal)  %></i>
-        </p>
-        <p><%= truncate(event.info, length: 200) %></p>
-        <hr>
+      <% @upcoming_events.each do |event| %>
+          <p>
+            <strong> <%= link_to event.title, event_path(event) %></strong>
+            <i><%= event.date.to_formatted_s(:long_ordinal) %></i>
+          </p>
+
+          <p><%= truncate(event.info, length: 200) %></p>
+          <hr>
       <% end %>
-      <p class="text-center"><%= link_to "View All",  events_path %></p> 
+      <p class="text-center"><%= link_to "View All", events_path %></p>
       <hr>
     </div>
-        
-  </div> 
+
+  </div>
 </div>

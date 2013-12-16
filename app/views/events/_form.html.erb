@@ -1,40 +1,40 @@
-<%= form_for @event, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field span8' %>
+<%= form_for @event, :html => {:class => 'form-horizontal'} do |f| %>
+    <div class="control-group">
+      <%= f.label :title, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :title, :class => 'text_field span8' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :host, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :host, :class => 'text_field span8' %>
+    <div class="control-group">
+      <%= f.label :host, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :host, :class => 'text_field span8' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :location, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :location, :class => 'text_field span8' %>
+    <div class="control-group">
+      <%= f.label :location, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :location, :class => 'text_field span8' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :date, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :date, :class => 'text_field span8', type: "date" %>
+    <div class="control-group">
+      <%= f.label :date, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :date, :class => 'text_field span8', type: "date" %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :info, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :info, :class => 'textarea span8' %>
+    <div class="control-group">
+      <%= f.label :info, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :info, :class => 'textarea span8' %>
+      </div>
     </div>
-  </div>
 
-  <% if current_user.is_admin? %>
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                events_path, :class => 'btn btn-danger' %>
-  </div>
-<% end %>
+    <% if current_user.is_admin? %>
+        <div class="form-actions">
+          <%= f.submit nil, :class => 'btn btn-primary' %>
+          <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                      events_path, :class => 'btn btn-danger' %>
+        </div>
+    <% end %>
 <% end %>

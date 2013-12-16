@@ -3,8 +3,8 @@
   <h1>Event Calendar</h1>
 </div>
 <% if current_user.try(:is_admin?) %>
-  <div class="container"><%= link_to '+', new_event_path, class: 'btn btn-primary' %></div>
-<% end %>            
+    <div class="container"><%= link_to '+', new_event_path, class: 'btn btn-primary' %></div>
+<% end %>
 <div id="events">
   <h2 id="month">
     <%= link_to "<", date: @date.prev_month %>
@@ -12,14 +12,14 @@
     <%= link_to ">", date: @date.next_month %>
   </h2>
   <%= calendar @date do |date| %>
-    <%= date.day %>
-    <% if @events_by_date[date] %>
-      <ul>
-        <% @events_by_date[date].each do |event| %>
-          <li><%= link_to event.title, event %></li>
-        <% end %>
-      </ul>
-    <% end %>
+      <%= date.day %>
+      <% if @events_by_date[date] %>
+          <ul>
+            <% @events_by_date[date].each do |event| %>
+                <li><%= link_to event.title, event %></li>
+            <% end %>
+          </ul>
+      <% end %>
   <% end %>
 </div>
 </div>
