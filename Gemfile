@@ -5,21 +5,20 @@ gem 'rails', '4.0.0'
 ruby '1.9.3'
 
 group :development do
-				# Use sqlite3 as the database for Active Record
-				gem 'sqlite3'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 group :production do
-				gem 'pg'
-				gem 'rails_12factor'
+  gem 'pg' # eroku doesnt support sqlite
+  gem 'rails_12factor'
 end
-# Use SCSS for stylesheets
+
 gem 'uglifier', '>= 1.3.0'
-gem 'twitter-bootstrap-rails'
-# Use CoffeeScript for .js.coffee assets and views
+gem 'twitter-bootstrap-rails' 
 gem 'less-rails'
-gem 'coffee-rails', '~> 4.0.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
- gem 'therubyracer', platforms: :ruby
+
+gem 'coffee-rails', '~> 4.0.0' 
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
