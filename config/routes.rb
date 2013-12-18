@@ -1,11 +1,10 @@
 Vespa::Application.routes.draw do
+  resources :summoners
 
   resources :events
 
   get "pages/index"
-  devise_for :users do
-    resources :summoners
-  end
+  devise_for :users
   resources :posts
   get 'streams'  => 'streams#index'
 
