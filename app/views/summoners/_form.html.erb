@@ -1,4 +1,4 @@
-<%= form_for(@summoner) do |f| %>
+<%= form_for(@summoner), :html => {:class => 'form-horizontal'} do |f| %>
   <% if @summoner.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@summoner.errors.count, "error") %> prohibited this summoner from being saved:</h2>
@@ -10,8 +10,20 @@
       </ul>
     </div>
   <% end %>
+   
+  <label for="summoner-name" class="col-sm-2 control-label">Summoner Name</label>
+
+  <div class="form-group col-md-10">
+    <%= f.text_field :name, class: "form-control", placeholder: "Enter Summoner Name" %> 
+  </div>
+  
+  <label for="region" class="col-sm-2 control-label">Region</label>
+
+  <div class="form-group col-md-10">
+    <%= f.text_field :region, class: "form-control", placeholder: "Region" %>
+  </div> 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit, class: "btn btn-default col-md-offset-2" %>
   </div>
 <% end %>
