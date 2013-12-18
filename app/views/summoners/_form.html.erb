@@ -1,0 +1,17 @@
+<%= form_for(@summoner) do |f| %>
+  <% if @summoner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@summoner.errors.count, "error") %> prohibited this summoner from being saved:</h2>
+
+      <ul>
+      <% @summoner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
