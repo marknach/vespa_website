@@ -3,13 +3,13 @@
 one:
   name: MyString
   profileIconId: 1
-  revisionDate: 
+  revisionDate: 2013-12-12
   revisionDateStr: 2013-12-12
-  summonerLevel: 
+  summonerLevel: 30
 
 two:
   name: MyString
   profileIconId: 1
-  revisionDate: 
+  revisionDate: 2013-12-12
   revisionDateStr: 2013-12-12
-  summonerLevel: 
+  summonerLevel: 30
