@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
          
   has_many :posts
   has_many :summoners
+  accepts_nested_attributes_for :summoners
 
   def is_admin?
     return self.email == "admin@vt.edu" 

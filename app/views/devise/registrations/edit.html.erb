@@ -57,8 +57,11 @@
       </div>
     </div>
     <div class="tab-pane panel-body" id="accounts">
-      <% if false %>
-        <p>Add form_for new summoner here</p>
+      <%= form_for current_user, remote: true do |f| %>
+          <%= f.fields_for :summoner do |d| %>
+            <%= d.text_field :name %>
+          <% end %>
+        <%= f.submit "Add" %>
       <% end %>
     </div>
   </div>

@@ -24,14 +24,13 @@ class SummonersController < ApplicationController
   # POST /summoners
   # POST /summoners.json
   def create
-    @summoner = Summoner.new(summoner_params)
+    @user = User.find(params[:user_id])
+    @summoner = @user.summoners.build(summoner_params)
 
     respond_to do |format|
       if @summoner.save
-        format.html { redirect_to @summoner, notice: 'Summoner was successfully created.' }
         format.json { render action: 'show', status: :created, location: @summoner }
       else
-        format.html { render action: 'new' }
         format.json { render json: @summoner.errors, status: :unprocessable_entity }
       end
     end

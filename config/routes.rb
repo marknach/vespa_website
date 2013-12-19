@@ -1,11 +1,14 @@
 Vespa::Application.routes.draw do
-  resources :summoners
 
   resources :events
 
   get "pages/index"
-  devise_for :users
+  devise_for :users, path: "accounts"
+  resources :users do
+    resources :summoners
+  end
   resources :posts
+
   get 'streams'  => 'streams#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
