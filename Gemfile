@@ -11,7 +11,10 @@ end
 group :production do
   gem 'pg' # eroku doesnt support sqlite
   gem 'rails_12factor'
-end
+en
+group :development, :test do
+  gem 'rspec-rails'
+endd
 
 gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails' 
