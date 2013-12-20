@@ -57,20 +57,9 @@
       </div>
     </div>
     <div class="tab-pane panel-body" id="accounts">
-      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), remote: true, :html => {:method => :put, class: "form-horizontal"}) do |f| %>
-          <%= f.fields_for :summoners do |summoner| %>
-            <div class="form-group">
-              <p class="form-control-static"><%= summoner.object.name  %> </p> 
-            </div>
-            <% if false %>
-            <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                        summoner_path(summoner),
-                        :method => :delete,
-                        :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
-                        :class => 'btn btn-danger' %>
-                      <% end %>
-          <% end %>
-        <%= f.submit "Add" %>
+      <%= form_tag("/summoners", method: "create", class: "form-horizontal") do %> 
+        <%= text_field_tag(:name) %>
+        <%= submit_tag("Add") %>
       <% end %>
     </div>
   </div>
