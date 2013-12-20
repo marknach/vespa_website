@@ -1,4 +1,5 @@
 class SummonersController < ApplicationController
+  include RiotHelper
   before_action :set_summoner, only: [:show, :edit, :update, :destroy]
 
   # GET /summoners
@@ -14,6 +15,7 @@ class SummonersController < ApplicationController
 
   # GET /summoners/new
   def new
+    
     @summoner = Summoner.new
   end
 
@@ -24,8 +26,7 @@ class SummonersController < ApplicationController
   # POST /summoners
   # POST /summoners.json
   def create
-    @user = User.find(params[:user_id])
-    @summoner = @user.summoners.build(summoner_params)
+    @summoner = current_user.summoners.build(summoner_params)
 
     respond_to do |format|
       if @summoner.save
@@ -68,6 +69,6 @@ class SummonersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summoner_params
-      params[:summoner]
+      params[:summoner].permit(:name)
     end
 end
