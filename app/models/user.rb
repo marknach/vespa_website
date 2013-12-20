@@ -15,13 +15,4 @@ class User < ActiveRecord::Base
   def to_s
     self.name.presence || self.email
   end
-  
-  private
-
-  def add_summoner(summoner_name) 
-    puts summoner_name
-   # summoner = Summoner.find_by(name: summoner_name)
-   # summoner = self.summoners.create(find_summoner_by_name(summoner_name)) unless summoner
-   # self.summoners << summoner
-  end 
 end
