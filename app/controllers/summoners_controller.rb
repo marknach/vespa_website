@@ -26,8 +26,9 @@ class SummonersController < ApplicationController
   # POST /summoners
   # POST /summoners.json
   def create
-    @summoner = current_user.summoners.build(summoner_params)
-
+    @summoner = Summoner.find_by(name: summoner_params[:name])
+    @summoner ||= Summoner.new(get_summoner_by_name(summoner_params[:name]))
+    current_user.summoners << @summoner
     respond_to do |format|
       if @summoner.save
         format.json { render action: 'show', status: :created, location: @summoner }
@@ -69,6 +70,6 @@ class SummonersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def summoner_params
-      params[:summoner].permit(:name)
+      params.permit(:name)
     end
 end

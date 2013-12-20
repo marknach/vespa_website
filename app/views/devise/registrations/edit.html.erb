@@ -57,7 +57,10 @@
       </div>
     </div>
     <div class="tab-pane panel-body" id="accounts">
-      <%= form_tag("/summoners", method: "create", class: "form-horizontal") do %> 
+      <% current_user.summoners.each do |s| %>
+        <p class="form-control-static"><%= s.name %></p>
+      <% end %>
+      <%= form_tag("/summoners", method: "create", remote: true, class: "form-horizontal") do %> 
         <%= text_field_tag(:name) %>
         <%= submit_tag("Add") %>
       <% end %>
