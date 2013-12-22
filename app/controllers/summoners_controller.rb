@@ -31,9 +31,9 @@ class SummonersController < ApplicationController
     current_user.summoners << @summoner
     respond_to do |format|
       if @summoner.save
-        format.json { render action: 'show', status: :created, location: @summoner }
+        format.js
       else
-        format.json { render json: @summoner.errors, status: :unprocessable_entity }
+        format.js { } 
       end
     end
   end

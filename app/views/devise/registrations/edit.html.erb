@@ -57,16 +57,18 @@
       </div>
     </div>
     <div class="tab-pane panel-body" id="accounts">
+      <div id="account-list">
       <% current_user.summoners.each do |s| %>
-        <div class="form-group">
-          <p class="form-control-static"><%= s.name %></p>
-        </div>
-      <% end %>
+          <div class="form-group">
+            <p class="form-control-static"><%= s.name %></p>
+          </div>
+        <% end %>
+      </div>
       <%= form_tag("/summoners", method: "create", remote: true, class: "form-horizontal") do %> 
         <div class="form-group">
-          <%= text_field_tag(:name, "Add a Summoner",  class: "form-control") %>
+          <%= text_field_tag(:name, nil ,  class: "form-control") %>
         </div>
-        <%= submit_tag("Add") %>
+        <%= submit_tag("Add", class: "btn btn-primary") %>
       <% end %>
     </div>
   </div>
