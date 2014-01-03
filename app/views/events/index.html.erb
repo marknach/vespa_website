@@ -1,10 +1,10 @@
 <%- model_class = Event -%>
 <div class="page-header">
-  <h1>Event Calendar</h1>
+  <h1>Event Calendar
+  <% if current_user.try(:is_admin?) %>
+    <%= link_to '+', new_event_path, class: 'btn btn-primary pull-right' %>
+  <% end %></h1>
 </div>
-<% if current_user.try(:is_admin?) %>
-    <div class="container"><%= link_to '+', new_event_path, class: 'btn btn-primary' %></div>
-<% end %>
 <div id="events">
   <h2 id="month">
     <%= link_to "<", date: @date.prev_month %>

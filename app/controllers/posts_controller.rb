@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: :create
-  before_action :check_creaor!, only: [:delete, :update]
+  before_action :check_creator!, only: [:delete, :update]
   # before_action :is_admin?, only: :create
   # GET /posts
   # GET /posts.json
@@ -68,7 +68,7 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
-    def check_creator
+    def check_creator!
       redirect_to(root_url) unless current_user == @post.user
     end
     # Never trust parameters from the scary internet, only allow the white list through.
