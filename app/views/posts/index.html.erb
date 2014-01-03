@@ -1,11 +1,11 @@
 <%- model_class = Post -%>
 <div class="container">
   <div class="page-header">
-    <h1><%= t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-    <%= link_to 'New Post', new_post_path, :class => 'btn btn-primary pull-right' %>
+    <h1><%= t '.title', :default => model_class.model_name.human.pluralize.titleize %>
+    <%= link_to 'New Post', new_post_path, :class => 'btn btn-primary pull-right' %></h1>
   </div>
-  <div class="media">
-    <% @posts.each do |post| %>
+    <div class="media">
+      <% @posts.each do |post| %>
         <% @author = User.find(post.user_id) %>
         <%= image_tag('badge.png', class: "media-object pull-left", size: "64x64") %>
         <div class="media-body">
@@ -24,6 +24,6 @@
           <% end %>
         </div>
         <hr>
-    <% end %>
+      <% end %>
   </div>
 </div>
