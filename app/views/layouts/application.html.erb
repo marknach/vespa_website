@@ -20,7 +20,7 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if signed_in? %>
-            <li><%= link_to current_user.email, edit_user_registration_path %></li>
+            <li><%= link_to current_user.email, '/profile/show' %></li>
             <li><%= link_to edit_user_registration_path do %>
               <span class="glyphicon glyphicon-cog"></span>
             <% end %>
