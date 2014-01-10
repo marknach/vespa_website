@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Announcement < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
   belongs_to :user
   def preview

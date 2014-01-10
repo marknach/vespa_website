@@ -19,6 +19,10 @@ end
 gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails' 
 gem 'less-rails'
+gem 'forem', :github => 'radar/forem', :branch => 'rails4'
+gem 'friendly_id'
+gem 'cancan'
+gem 'will_paginate'
 
 gem 'coffee-rails', '~> 4.0.0' 
 gem 'therubyracer', platforms: :ruby

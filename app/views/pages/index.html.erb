@@ -24,16 +24,16 @@
     <div class="col-md-4">
       <h2>Announcements</h2>
       <hr>
-      <% @recent_posts.each do |post| %>
+      <% @recent_announcements.each do |announcement| %>
           <p>
-            <strong> <%= link_to post.title, post_path(post) %> </strong>
-            by <i><%= post.user %> </i>
+            <strong> <%= link_to announcement.title, announcement_path(announcement) %> </strong>
+            by <i><%= announcement.user %> </i>
           </p>
 
-          <p> <%= simple_format post.preview %> </p> <%= link_to "(read more)", post_path(post) %>
+          <p> <%= simple_format announcement.preview %> </p> <%= link_to "(read more)", announcement_path(announcement) %>
           <hr>
       <% end %>
-      <p class="text-center"><%= link_to "View All", posts_path %></p>
+      <p class="text-center"><%= link_to "View All", announcements_path %></p>
       <hr>
     </div>
     <div class="col-md-4">

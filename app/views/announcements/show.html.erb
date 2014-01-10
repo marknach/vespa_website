@@ -1,19 +1,19 @@
-<%- model_class = Post -%>
+<%- model_class = Announcement -%>
 <div class="container">
-  <% @author = User.find(@post.user_id) %>
-  <h2><%= @post.title %></h2>
+  <% @author = User.find(@announcement.user_id) %>
+  <h2><%= @announcement.title %></h2>
   <i><%= @author.name || @author.email %></i>
 
-  <p><%= simple_format(@post.content) %></p>
+  <p><%= simple_format(@announcement.content) %></p>
 
   <div class="form-actions">
     <%= link_to t('.back', :default => t("helpers.links.back")),
-                posts_path, :class => 'btn btn-default' %>
+                announcements_path, :class => 'btn btn-default' %>
     <% if @author.id == current_user.try(:id) %>
         <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                    edit_post_path(@post), :class => 'btn btn-default' %>
+                    edit_announcement_path(@announcement), :class => 'btn btn-default' %>
         <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                    post_path(@post),
+                    announcement_path(@announcement),
                     :method => 'delete',
                     :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
                     :class => 'btn btn-danger' %>
