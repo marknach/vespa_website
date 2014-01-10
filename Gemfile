@@ -9,12 +9,12 @@ group :development do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg' # eroku doesnt support sqlite
   gem 'rails_12factor'
 end
 group :development, :test do
   gem 'rspec-rails'
 end
+  gem 'pg' # Heroku doesnt support sqlite
 
 gem 'uglifier', '>= 1.3.0'
 gem 'twitter-bootstrap-rails' 
