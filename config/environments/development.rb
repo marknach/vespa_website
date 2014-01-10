@@ -27,4 +27,5 @@ Vespa::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.serve_static_assets = true
+  config.assets.compile = true
 end
