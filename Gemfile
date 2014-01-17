@@ -17,8 +17,9 @@ end
   gem 'pg' # Heroku doesnt support sqlite
 
 gem 'uglifier', '>= 1.3.0'
-gem 'twitter-bootstrap-rails' 
 gem 'less-rails'
+gem "twitter-bootstrap-rails"
+
 gem 'forem', :github => 'radar/forem', :branch => 'rails4'
 gem 'friendly_id'
 gem 'cancan'
