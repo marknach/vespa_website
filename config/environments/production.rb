@@ -20,7 +20,7 @@ Vespa::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
   
   config.assets.precompile += %w( '.woff', '.eot', '.svg', '.ttf')
   # Compress JavaScripts and CSS.
@@ -78,5 +78,4 @@ Vespa::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-  config.serve_static_assets = true
 end
