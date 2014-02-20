@@ -21,10 +21,6 @@ gem "twitter-bootstrap-rails"
 
 gem 'google-api-client'
 
-gem 'friendly_id'
-gem 'cancan'
-gem 'will_paginate'
-
 gem 'coffee-rails', '~> 4.0.0' 
 gem 'therubyracer', platforms: :ruby
 
