@@ -14,29 +14,28 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><%= link_to "News", main_app.announcements_path %></li>
-        <li><%= link_to "Forum", main_app.forem_path  %></li>
-        <li><%= link_to "Events", main_app.events_path %></li>
-        <li><%= link_to "Stream", main_app.streams_path %></li>
+        <li><%= link_to "News", announcements_path %></li>
+        <li><%= link_to "Events", events_path %></li>
+        <li><%= link_to "Stream", streams_path %></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if signed_in? %>
             <li><%= link_to current_user.email, '/profile/show' %></li>
-            <li><%= link_to main_app.edit_user_registration_path do %>
+            <li><%= link_to edit_user_registration_path do %>
               <span class="glyphicon glyphicon-cog"></span>
             <% end %>
             </li>
             <form class="navbar-form navbar-right">
               <div class="form-group">
-                <%= link_to "Sign out", main_app.destroy_user_session_path, :method => :delete, class: "btn btn-primary" %>
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-primary" %>
               </div>
             </form>
         <% else %>
-            <%= form_for("user", :url => main_app.user_session_path, :html => {class: "navbar-form navbar-right", role: "form"}) do |f| %>
+            <%= form_for("user", :url => user_session_path, :html => {class: "navbar-form navbar-right", role: "form"}) do |f| %>
                 <div class="form-group"><%= f.text_field :email, class: "form-control", placeholder: "Email" %></div>
                 <div class="form-group"><%= f.password_field :password, class: "form-control", placeholder: "Password" %></div>
                 <div class="form-group"><%= f.submit 'Sign In', class: "btn btn-success" %></div>
-                <div class="form-group"><%= link_to "Sign up", main_app.new_user_registration_path, class: "btn btn-primary" %></div>
+                <div class="form-group"><%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %></div>
             <% end %>
         <% end %>
       </ul>
