@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
-ruby '2.1.0'
 
 group :development do
   # Use sqlite3 as the database for Active Record
@@ -22,7 +21,6 @@ gem "twitter-bootstrap-rails"
 
 gem 'google-api-client'
 
-gem 'forem', :github => 'radar/forem', :branch => 'rails4'
 gem 'friendly_id'
 gem 'cancan'
 gem 'will_paginate'
