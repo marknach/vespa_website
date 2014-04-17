@@ -1,4 +1,4 @@
-module RiotHelper
+module RiotPerformer
   require 'net/http'
   require 'json'
   
