@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+    User.delete_all
+    mark = User.create!(name: "Mark Nachazel", email: "marknach@vt.edu", password: "password123");
+
+    Announcement.delete_all
+    post1 = Announcement.create!(title: "A post!", content: "Some text!", user: mark);
+
+    Event.delete_all
+    event1 = Event.create!(title: "Event 1", date: Date.today, host: "Vespa");
+    event2 = Event.create!(title: "Event 2", date: Date.today + 3.days, host: "Vespa");
+
