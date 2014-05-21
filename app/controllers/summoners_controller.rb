@@ -1,5 +1,5 @@
 class SummonersController < ApplicationController
-  include RiotHelper
+  include Riot::Performer
   before_action :set_summoner, only: [:show, :edit, :update, :destroy]
 
   # GET /summoners
