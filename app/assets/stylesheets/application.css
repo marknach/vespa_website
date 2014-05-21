@@ -14,3 +14,6 @@
  *= require_tree .
  */
 
+hr {
+  visibility: hidden;
+}
