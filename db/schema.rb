@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 20140109234655) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.integer  "summoner_id"
     t.string   "image_url"
     t.string   "first_name"
     t.string   "last_name"

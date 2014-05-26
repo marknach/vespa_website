@@ -6,6 +6,7 @@ class CreateSummoners < ActiveRecord::Migration
       t.integer :revisionDate, limit: 8
       t.date :revisionDateStr
       t.integer :summonerLevel, limit: 8
+      t.belongs_to :user
 
       t.timestamps
     end
