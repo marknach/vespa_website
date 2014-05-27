@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :summoners
 
   def is_admin?
-    return self.email == "admin@vt.edu" || self.email == "marknach@vt.edu" 
+    self.email == 'admin@vt.edu' || self.email == 'marknach@vt.edu'
   end
 
   def to_s

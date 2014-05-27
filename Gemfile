@@ -12,7 +12,7 @@ gem 'pg'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'less-rails'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
 
 gem 'google-api-client'
 
@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'devise'
+#gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
