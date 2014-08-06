@@ -1,9 +1,9 @@
 <div class="container">
-<h2><%= @user %></h2>
   <hr/>
   <div class="col-md-4">
     <%= image_tag('badge.png', class: "img-responsive", size: "64x64") %>
+    <h3><%= @user.name %></h3>
+    <p><%= @user.email %></p>
   </div>
-  <div class="col-md-7"><p><%= @user.bio %></p></div>
-
+  <div class="col-md-8"><p><%= @user.bio %></p></div>
 </div> 
