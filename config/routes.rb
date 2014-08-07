@@ -1,5 +1,5 @@
 Vespa::Application.routes.draw do 
-  get "profile/show"
+  get "profiles/show/:id" => 'profiles#show'
   devise_for :users
   resources :events 
   resources :summoners
