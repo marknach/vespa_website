@@ -20,23 +20,28 @@
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if signed_in? %>
-          <li><%= link_to current_user.email, "/profiles/show/#{current_user.id}" %></li>
-            <li><%= link_to edit_user_registration_path do %>
-              <span class="glyphicon glyphicon-cog"></span>
-            <% end %>
-            </li>
-            <form class="navbar-form navbar-right">
-              <div class="form-group">
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "btn btn-primary" %>
-              </div>
-            </form>
+          <li class='dropdown'>
+            <a href="#" class="dropdown" data-toggle="dropdown"><%= current_user.email %><span class='caret'></span> </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href=<%= "/profiles/show/#{current_user.id}" %>><span class="glyphicon glyphicon-user"></span> Profile</a></li>
+              <li><%= link_to edit_user_registration_path do %>
+                <span class="glyphicon glyphicon-cog"></span> Settings
+                <% end %>
+              </li>
+              <li>
+                <%= link_to destroy_user_session_path, :method => :delete  do %>
+                  <span class='glyphicon glyphicon-off'></span> Sign out</a>
+                <% end %>
+              </li>
+            </ul>
+          </li>
         <% else %>
-            <%= form_for("user", :url => user_session_path, :html => {class: "navbar-form navbar-right", role: "form"}) do |f| %>
-                <div class="form-group"><%= f.text_field :email, class: "form-control", placeholder: "Email" %></div>
-                <div class="form-group"><%= f.password_field :password, class: "form-control", placeholder: "Password" %></div>
-                <div class="form-group"><%= f.submit 'Sign In', class: "btn btn-success" %></div>
-                <div class="form-group"><%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %></div>
-            <% end %>
+          <%= form_for("user", :url => user_session_path, :html => {class: "navbar-form navbar-right", role: "form"}) do |f| %>
+            <div class="form-group"><%= f.text_field :email, class: "form-control", placeholder: "Email" %></div>
+            <div class="form-group"><%= f.password_field :password, class: "form-control", placeholder: "Password" %></div>
+            <div class="form-group"><%= f.submit 'Sign In', class: "btn btn-success" %></div>
+            <div class="form-group"><%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %></div>
+          <% end %>
         <% end %>
       </ul>
       <!--/.navbar-collapse -->
