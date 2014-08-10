@@ -5,5 +5,17 @@
     <h3><%= @user.name %></h3>
     <p><%= @user.email %></p>
   </div>
-  <div class="col-md-8"><p><%= @user.bio %></p></div>
+  <div class="col-md-8">
+    <p><%= @user.bio %></p>
+      <h3>Recent Posts</h3>
+      <% @recent_announcements.each do |announcement| %>
+          <p>
+            <strong> <%= link_to announcement.title, announcement_path(announcement) %> </strong>
+            by <i><%= announcement.user %> </i>
+          </p>
+
+          <p> <%= simple_format announcement.preview %> </p> <%= link_to "(read more)", announcement_path(announcement) %>
+          <hr>
+      <% end %>
+  </div>
 </div> 
