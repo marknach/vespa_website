@@ -21,7 +21,7 @@
 <hr>
 <div class="container">
   <div class="row fill-height">
-    <div class="col-md-4">
+    <div class="col-md-6">
       <h2>Announcements</h2>
       <hr>
       <% @recent_announcements.each do |announcement| %>
@@ -36,14 +36,7 @@
       <p class="text-center"><%= link_to "View All", announcements_path %></p>
       <hr>
     </div>
-    <div class="col-md-4">
-      <h2>Recent Forum Posts</h2>
-
-      <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-        condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec
-        sed odio dui. </p>
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-6">
       <h2>Upcoming Events</h2>
       <hr>
       <% if @upcoming_events.empty? %>
