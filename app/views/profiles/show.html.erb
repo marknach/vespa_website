@@ -1,11 +1,11 @@
 <div class="container">
   <hr/>
-  <div class="col-md-4">
-    <%= image_tag @user.gravatar_url, class: "img-responsive", size: "128x128" %>
+  <div class="col-md-3">
+    <%= image_tag @user.gravatar_url, class: "img-responsive img-thumbnail" %>
     <h3><%= @user.name %></h3>
     <p><%= @user.email %></p>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <p><%= @user.bio %></p>
       <h3>Recent Posts</h3>
       <% @recent_announcements.each do |announcement| %>
