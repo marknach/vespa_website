@@ -33,6 +33,7 @@ group :doc do
 end
 
 gem 'devise'
+gem 'gravtastic'
 #gem 'activeadmin', github: 'gregbell/active_admin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
