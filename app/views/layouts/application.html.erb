@@ -9,41 +9,47 @@
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
-    <div class="navbar-header">
-      <%= link_to "Home", root_path, class: "navbar-brand" %>
-    </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "News", announcements_path %></li>
         <li><%= link_to "Events", events_path %></li>
         <li><%= link_to "Stream", streams_path %></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
         <% if signed_in? %>
-          <li class='dropdown'>
-            <a href="#" class="dropdown" data-toggle="dropdown"><%= current_user.email %><span class='caret'></span> </a>
-            <ul class="dropdown-menu" role="menu">
-              <li>
-                <%= link_to new_announcement_path do %>
-                  <span class='glyphicon glyphicon-edit'></span> New Post</a>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_event_path do %>
-                  <span class='glyphicon glyphicon-calendar'></span> Create New Event</a>
-                <% end %>
-              </li>
-              <li><a href=<%= "/profiles/show/#{current_user.id}" %>><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-              <li><%= link_to edit_user_registration_path do %>
-                <span class="glyphicon glyphicon-cog"></span> Settings
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, :method => :delete  do %>
-                  <span class='glyphicon glyphicon-off'></span> Sign out</a>
-                <% end %>
-              </li>
-            </ul>
+          <li>
+            <a href='<%= "/profiles/show/#{current_user.id}" %>' >
+              <%= image_tag current_user.gravatar_url, class: 'img-rounded', size: '20x20' %>
+              <%= current_user.email %> 
+            </a>
+          </li>
+          <% if current_user.is_admin? %>
+            <li class="dropdown">
+              <a href="#" class="dropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-edit"></span> <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li>
+                  <%= link_to new_announcement_path do %>
+                    <span class='glyphicon glyphicon-pencil'></span> New Post</a>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to new_event_path do %>
+                    <span class='glyphicon glyphicon-calendar'></span> New Event</a>
+                  <% end %>
+                </li>
+              </ul>
+            </li>
+          <% end %>
+          <li>
+            <%= link_to edit_user_registration_path do %>
+            <span class="glyphicon glyphicon-cog"></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, :method => :delete  do %>
+              <span class='glyphicon glyphicon-off'></span>
+            <% end %>
           </li>
         <% else %>
           <%= form_for("user", :url => user_session_path, :html => {class: "navbar-form navbar-right", role: "form"}) do |f| %>
