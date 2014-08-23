@@ -16,7 +16,7 @@
         <li><%= link_to "Events", events_path %></li>
         <li><%= link_to "Stream", streams_path %></li>
       </ul>
-      <ul class="nav navbar-nav pull-right">
+      <ul class="nav navbar-nav navbar-right">
         <% if signed_in? %>
           <li>
             <a href='<%= "/profiles/show/#{current_user.id}" %>' >
