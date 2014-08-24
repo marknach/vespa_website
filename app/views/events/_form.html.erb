@@ -1,27 +1,19 @@
-<%= form_for @event, :html => {:class => 'form-horizontal'} do |f| %>
-    <div class="control-group">
+<%= form_for @event, :html => {:class => 'form-horizontal', :role => 'form'} do |f| %>
+    <div class="form-group">
       <%= f.label :title, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :title, :class => 'text_field span8' %>
-      </div>
+      <%= f.text_field :title, :class => 'form-control col-md-8' %>
     </div>
-    <div class="control-group">
+    <div class="form-group">
       <%= f.label :location, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :location, :class => 'text_field span8' %>
-      </div>
+      <%= f.text_field :location, :class => 'form-control col-md-8' %>
     </div>
-    <div class="control-group">
+    <div class="form-group">
       <%= f.label :date, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :date, :class => 'text_field span8', type: "date" %>
-      </div>
+      <%= f.text_field :date, :class => 'form-control col-md-8', type: "date" %>
     </div>
-    <div class="control-group">
+    <div class="form-group">
       <%= f.label :info, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_area :info, :class => 'textarea span8' %>
-      </div>
+      <%= f.text_area :info, :class => 'form-control col-md-8', rows: 10 %>
     </div>
 
     <% if current_user.is_admin? %>
