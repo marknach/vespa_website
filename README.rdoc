@@ -1,3 +1,4 @@
 == README
 
-Website developed for purpose of learning and practicing ruby on rails.  Working on a redesign of the current Virginia eSports website found @ www.vespa.org.vt.edu
+New website for Virginia eSports Association found at www.virginiaesports.com
+Test environment @ vespa-test.herokuapp.com for latest and greatest.
