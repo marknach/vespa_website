@@ -5,6 +5,5 @@ Vespa::Application.routes.draw do
   resources :summoners
   resources :announcements
   get 'streams'  => 'streams#index'
-  get 'pages/index'
-  root 'pages#index'
+  root 'pages#home'
 end
