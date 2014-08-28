@@ -17,3 +17,7 @@
 hr {
   visibility: hidden;
 }
+
+body {
+  padding-top: 70px;
+}
