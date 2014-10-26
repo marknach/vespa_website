@@ -13,6 +13,6 @@
     post1 = Announcement.create!(title: "A post!", content: "Some text!", user: mark);
 
     Event.delete_all
-    event1 = Event.create!(title: "Event 1", date: Date.today, host: "Vespa");
-    event2 = Event.create!(title: "Event 2", date: Date.today + 3.days, host: "Vespa");
+    event1 = Event.create!(title: "Event 1", date: Date.today);
+    event2 = Event.create!(title: "Event 2", date: Date.today + 3.days);
 
