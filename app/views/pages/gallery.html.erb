@@ -1,0 +1,5 @@
+<ul class="gallery">
+	<% Dir.glob('app/assets/images/gallery-images/*') do |img| %>
+		<li><%= image_tag "gallery-images/#{img.split('/').last}", class: 'img-rounded', size: '256x256' %></li>
+	<% end %>
+</ul>

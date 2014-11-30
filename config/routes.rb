@@ -6,5 +6,7 @@ Vespa::Application.routes.draw do
   resources :announcements
   get 'streams'  => 'streams#index'
   get 'about_us' => 'pages#about_us'
+  get 'sponsors' => 'pages#sponsors'
+  get 'gallery' => 'pages#gallery'
   root 'pages#home'
 end
