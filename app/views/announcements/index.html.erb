@@ -12,7 +12,7 @@
           <h4 class="media-heading"><strong><%= link_to announcement.title, announcement_path(announcement) %></strong> <i>by <%= @author %></i>
           </h4>
 
-          <p><%= announcement.preview %></p>
+          <p><%= simple_format announcement.preview %></p>
           <% if @author.id == current_user.try(:id) %>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_announcement_path(announcement), :class => 'btn btn-default' %>

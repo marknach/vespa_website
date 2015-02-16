@@ -4,7 +4,7 @@
   <h2><%= @announcement.title %></h2>
   <i><%= @author.name || @author.email %></i>
 
-  <p><%= simple_format(@announcement.content) %></p>
+  <p><%= simple_format(@announcement.html_content) %></p>
 
   <div class="form-actions">
     <%= link_to t('.back', :default => t("helpers.links.back")),

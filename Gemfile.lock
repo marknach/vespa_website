@@ -122,6 +122,7 @@ GEM
     rake (10.3.2)
     rdoc (4.1.2)
       json (~> 1.4)
+    redcarpet (3.2.2)
     ref (1.0.5)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
@@ -198,6 +199,7 @@ DEPENDENCIES
   pg
   rails (= 4.1.0)
   rails_12factor
+  redcarpet
   rspec-rails
   sdoc
   therubyracer

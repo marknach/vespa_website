@@ -13,6 +13,7 @@ gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
+gem 'redcarpet'
 
 gem 'google-api-client'
 

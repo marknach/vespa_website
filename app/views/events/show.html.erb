@@ -9,7 +9,7 @@
   <dt><strong><%= model_class.human_attribute_name(:date) %>:</strong></dt>
   <dd><%= @event.date %></dd>
   <dt><strong><%= model_class.human_attribute_name(:info) %>:</strong></dt>
-  <dd><%= @event.info %></dd>
+  <dd><%= simple_format @event.html_content %></dd>
 </dl>
 <% if current_user.try(:is_admin?) %>
     <div class="form-actions">
