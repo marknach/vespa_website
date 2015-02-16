@@ -8,6 +8,7 @@
 			<h2>Announcements</h3>
 			<hr>
 				<% @recent_announcements.each do |announcement| %>
+				<div class='announcement'>
 						<p>
 							<strong> <%= link_to announcement.title, announcement_path(announcement) %> </strong>
 							by <i><%= announcement.user %> </i>
@@ -15,6 +16,7 @@
 
 						<p> <%= simple_format announcement.preview %> </p> 
 					<%= link_to "(read more)", announcement_path(announcement) %>
+				</div>
 				<% end %>
 				<p class="text-center"><%= link_to "View All", announcements_path %></p>
 		</div>
