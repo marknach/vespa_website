@@ -5,7 +5,7 @@ class Announcement < ActiveRecord::Base
 	@@md
 
   def preview
-    Markdown.new(truncate(self.content, length: 300)).to_html
+    Markdown.new(truncate(self.content, length: 300, seperator: ' ')).to_html
   end
 	
 	def html_content
