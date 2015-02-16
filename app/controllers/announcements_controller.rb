@@ -69,7 +69,7 @@ class AnnouncementsController < ApplicationController
       @announcement = Announcement.find(params[:id])
     end
     def check_creator!
-      redirect_to(root_url) unless current_user == @announcement.user
+      redirect_to(root_url) unless (current_user == @announcement.user) || current_user.is_admin?
     end
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
