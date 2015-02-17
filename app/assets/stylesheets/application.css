@@ -18,10 +18,16 @@ hr {
   visibility: hidden;
 }
 
-body {
-  padding-top: 70px;
-}
-
 .announcement {
 	margin-bottom: 20px;
+}
+
+footer {
+	height: 150px;
+	width: 100%;
+	background-color: white;
+}
+
+.main-content {
+	margin-top: 70px;
 }
